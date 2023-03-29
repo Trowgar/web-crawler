@@ -3,3 +3,6 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+data_asset:
+    path: /data/{filename}
+    controller: App\Controller\AssetController::cities

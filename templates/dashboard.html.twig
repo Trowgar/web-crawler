@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="weather-container">
+        <h2>Weather data</h2>
+        <div class="weather-buttons" id="weather-buttons">
+
+        </div>
+        <div id="weather-data" style="display:none;">
+            <div class="weather-card">
+                <h4 id="date"></h4>
+                <p id="temperature"></p>
+                <p id="wind-speed"></p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('js/dashboard.js') }}" data-path="{{ path('app_weather') }}" data-cities-path="{{ path('data_asset', {'filename': 'cities.json'}) }}" defer></script>
+{% endblock %}
